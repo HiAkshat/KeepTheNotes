@@ -16,15 +16,26 @@ function App(){
     // const [items, setItems] = useState([])
 
     function createListItem(title, textInput){
-        setItems(prevValue => [...prevValue, {title: title, text:textInput}])
+        if (!(title==="" && textInput==="")){
+            setItems(prevValue => [...prevValue, {title: title, text:textInput}])
+        }
+        console.log(items.length)
+    }
+
+    function deleteItem(id){
+        setItems(prevValue => {
+            return prevValue.filter((item, index) => {return id != index})
+        })
     }
 
     return (
         <div>
             <Header />
             <NewNote onAdd={createListItem} />
-            {items.map((item) => <Note title={item.title} content={item.text} />)}
-            {/* {items.map( (item) => <Note title={item.title} content={item.text} />)} */}
+            <div className="container">
+                {/* {items.map((item, index) => <Note key={index} id={index} title={item.title} content={item.text} />)} */}
+                {items.map((item, index) => <Note key={index} id={index} title={item.title} content={item.text} onDelete={deleteItem} />)}
+            </div>
         </div>
     )
 }

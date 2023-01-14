@@ -26,8 +26,8 @@ function NewNote(props){
   return (
     <div className="new_note">
     <form>
-      <input className="new_note_title" type="text" placeholder="Add Title" onChange={handleTitleChange} value={title}/>
-      <textarea rows="3" className="new_note_text" type="text" placeholder="Take A Note.." onChange={handleTextChange} value={textInput}/>
+      <input className="new_note_title" type="text" placeholder="Title" onChange={handleTitleChange} value={title}/>
+      <textarea rows="3" className="new_note_text" type="text" placeholder="Take A Note..." onChange={handleTextChange} value={textInput}/>
      
       <button className="new_note_submit"
       onClick={submitNote}>

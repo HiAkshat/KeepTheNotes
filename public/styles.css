@@ -21,7 +21,15 @@ header h1{
     color: white;
 }
 
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100px;
+    /* background-color: red; */
+}
+
 .note, .new_note{
+    position: relative;
     float: left;
     background-color: white;
 
@@ -32,8 +40,8 @@ header h1{
     max-width: 300px;
     padding: 10px;
 
-    min-height: 70px;
-    min-width: 200px;
+    /* min-height: 70px;
+    min-width: 200px; */
 }
 
 .new_note{
@@ -67,9 +75,21 @@ header h1{
     padding: 5px 0px 10px 10px ;
     /* width: 100% */
     font-size: 1.5rem;
+    font-weight: 600;
 
     width: 100%;
     border: none;
+    outline: none;
+}
+
+.new_note_text{
+    padding: 3px 0px 10px 10px ;
+    font-size: 1rem;
+
+    text-align:start;
+    border: none;
+    width: 100%;
+    resize: none;
     outline: none;
 }
 
@@ -82,20 +102,30 @@ header h1{
 }
 
 
-.note p, .new_note_text{
-    padding: 3%;
-    padding-top: 3px;
+.note p{
+    padding: 3px 10px 40px 10px ;
     font-size: 1rem;
 }
 
-.new_note_text{
-    text-align:start;
+
+
+.delete_button{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    height: 35px;
+    width: 35px;
+
+    background-color: rgba(0, 0, 0, 0);
     border: none;
-    width: 100%;
-    resize: none;
-    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
+.delete_button:hover{
+    background-color: rgba(0, 0, 0, 0.026);
+}
 
 footer{
     position: absolute;
